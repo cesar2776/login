@@ -7,7 +7,7 @@
 </head>
 <body style="background-color: gray">
 <br><br><br>
-<div class="container">
+<div class="container"  opacity: 0.5;>
 	<div class="row">
 		<div class="col-sm-4"></div>
 		<div class="col-sm-4">
@@ -15,7 +15,7 @@
 				<div class="panel panel-heading">Login Cesar Arturo Aguilar Castro</div>
 				<div class="panel panel-body">
 					<div style="text-align: center;">
-						<img src="img/tesh.jpg" height="250">
+						<img src="img/escuela.jpg" height="250">
 					</div>
 					<p></p>
 					<label>Usuario</label>
@@ -38,10 +38,12 @@
 	$(document).ready(function(){
 		$('#entrarSistema').click(function(){
 			if($('#usuario').val()==""){
-				alertify.alert("Debes agregar el usuario");
+				// Este es el mensaje de alerta
+				alertify.alert('ALERTA!', 'Debes agregar el usuario!', function(){ alertify.success('Ok'); });
 				return false;
 			}else if($('#password').val()==""){
-				alertify.alert("Debes agregar el password");
+				// Este es el mensaje de alerta
+				alertify.alert('ALERTA!', 'Debes agregar el password!', function(){ alertify.success('Ok'); });
 				return false;
 			}
 
@@ -54,9 +56,10 @@
 						data:cadena,
 						success:function(r){
 							if(r==1){
-								window.location="https://www.facebook.com/";
+								window.location='inicio.php';
 							}else{
-								alertify.alert("Fallo al entrar :(");
+								// Este es el mensaje de alerta
+								alertify.alert('ALERTA!', 'Fallo al entrar!', function(){ alertify.success('Ok'); });
 							}
 						}
 					});
